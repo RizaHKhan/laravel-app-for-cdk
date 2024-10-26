@@ -8,6 +8,7 @@ if [[ ! -f /var/www/app/.env ]]; then
 fi
 
 cd /var/www/app
+php artisan migrate
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
