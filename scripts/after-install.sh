@@ -2,6 +2,8 @@
 
 if [[ ! -f /var/www/app/.env ]]; then
     cp /var/www/app/.env.example /var/www/app/.env
+
+    cd /var/www/app
     php artisan generate:key
 fi
 
