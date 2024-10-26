@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ ! -f /var/www/app/.env ]]; then
+    cp /var/www/app/.env.example /var/www/app/.env
+    php artisan generate:key
+fi
+
 cd /var/www/app
 php artisan config:cache
 php artisan route:cache
