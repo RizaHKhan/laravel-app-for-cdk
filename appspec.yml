@@ -6,6 +6,8 @@ files:
     destination: /var/www/app
     file_exists_behavior: OVERWRITE
 hooks:
+  BeforeInstall:
+    - location: scripts/set-env.sh
   AfterInstall:
     - location: scripts/after-install.sh
       timeout: 300
